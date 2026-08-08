@@ -68,4 +68,4 @@ def adicionar_gasto(saldo, historico):
     else:
         print("Saldo insuficiente para o gasto.")
 
-        return saldo, historico
+    return saldo, historico
