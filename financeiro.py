@@ -1,13 +1,24 @@
 from datetime import datetime
 from arquivos import salvar_dados
 
+def pedir_valor(mensagem):
+    while True:
+        try:
+            valor = float(input(mensagem))
+            if valor < 0:
+                print("O valor não pode ser negativo. Tente novamente.")
+            else:
+                return valor
+        except ValueError:
+            print("Valor inválido. Digite um número válido.")
+
 def ver_saldo(saldo):
     print(f"Seu saldo atual é: R$ {saldo:.2f}")
 
 
 def adicionar_entrada(saldo, historico):
 
-    valor = float(input("Digite o valor da entrada: "))
+    valor = pedir_valor("Digite o valor da entrada: ")
 
     data = datetime.now().strftime("%d/%m/%Y")
 
@@ -23,7 +34,7 @@ def adicionar_entrada(saldo, historico):
 
 def adicionar_gasto(saldo, historico):
 
-    valor = float(input("Digite o valor do gasto: "))
+    valor = pedir_valor("Digite o valor do gasto: ")
 
     while True:
         print("Categorias disponíveis:")
