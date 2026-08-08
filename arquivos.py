@@ -14,9 +14,14 @@ def salvar_dados(saldo, historico):
 def carregar_dados():
 
     if os.path.exists("dados.json"):
-        with open("dados.json", "r") as arquivo:
-            dados =json.load(arquivo)
+        try:
+            with open("dados.json", "r") as arquivo:
+                dados = json.load(arquivo)
 
-        return dados["saldo"], dados["historico"]
+            return dados["saldo"], dados["historico"]
+
+        except (json.JSONDecodeError, KeyError):
+            print("Erro ao carregar os dados. Inicializando com saldo 0 e histórico vazio.")
+            return 0, []
 
     return 0, []
