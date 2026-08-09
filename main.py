@@ -1,21 +1,12 @@
-from arquivos import salvar_dados, carregar_dados
+from arquivos import carregar_dados
 from financeiro import ver_saldo, adicionar_entrada, adicionar_gasto
 from relatorios import ver_historico, calcular_resumo, resumo_categorias
 
-saldo = 0
-historico = []
 
-def sair():
-    print("Obrigado por usar o Controle Financeiro!")
-
-saldo, historico = carregar_dados()
-
-while True:
-
+def mostrar_menu():
     print("=========================")
     print("CONTROLE FINANCEIRO")
     print("=========================")
-
     print("1 - Adicionar entrada")
     print("2 - Adicionar gasto")
     print("3 - Ver saldo")
@@ -23,6 +14,16 @@ while True:
     print("5 - Calcular resumo")
     print("6 - Resumo por categoria")
     print("7 - Sair")
+
+
+def sair():
+    print("Obrigado por usar o Controle Financeiro!")
+
+
+saldo, historico = carregar_dados()
+
+while True:
+    mostrar_menu()
 
     opcao = input("Escolha uma opção: ")
 
@@ -32,7 +33,7 @@ while True:
     elif opcao == "2":
         saldo, historico = adicionar_gasto(saldo, historico)
 
-    elif opcao == "3": 
+    elif opcao == "3":
         ver_saldo(saldo)
 
     elif opcao == "4":
@@ -40,7 +41,7 @@ while True:
 
     elif opcao == "5":
         calcular_resumo(historico)
-        
+
     elif opcao == "6":
         resumo_categorias(historico)
 
@@ -50,4 +51,3 @@ while True:
 
     else:
         print("Opção inválida.")
-
