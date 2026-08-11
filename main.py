@@ -1,6 +1,6 @@
 from arquivos import carregar_dados
 from financeiro import ver_saldo, adicionar_entrada, adicionar_gasto
-from relatorios import ver_historico, calcular_resumo, resumo_categorias
+from relatorios import pesquisar_transacoes, ver_historico, calcular_resumo, resumo_categorias, editar_transacao, excluir_transacao
 
 
 def mostrar_menu():
@@ -13,7 +13,10 @@ def mostrar_menu():
     print("4 - Ver histórico")
     print("5 - Calcular resumo")
     print("6 - Resumo por categoria")
-    print("7 - Sair")
+    print("7 - Pesquisar transações")
+    print("8 - Excluir transação")
+    print("9 - Editar transação")
+    print("10 - Sair")
 
 
 def sair():
@@ -46,6 +49,15 @@ while True:
         resumo_categorias(historico)
 
     elif opcao == "7":
+        pesquisar_transacoes(historico)
+
+    elif opcao == "8":
+        saldo, historico = excluir_transacao(saldo, historico)
+
+    elif opcao == "9":
+        saldo, historico = editar_transacao(saldo, historico)
+
+    elif opcao == "10":
         sair()
         break
 
