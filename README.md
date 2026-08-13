@@ -34,3 +34,7 @@ controle-financeiro-python/
 ├── arquivos.py
 ├── dados.json
 └── README.md
+```
+
+## 🖥️ Demonstração
+![Controle financeiro](controle-financeiro.png)
