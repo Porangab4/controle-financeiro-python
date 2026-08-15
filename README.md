@@ -36,5 +36,13 @@ controle-financeiro-python/
 └── README.md
 ```
 
-## 🖥️ Demonstração
-![Controle financeiro](controle-financeiro.png)
+## 📸 Demonstração
+
+### Menu principal
+![Menu principal](menu.png)
+
+### Cadastro e controle de transações
+![Transações](transações.png)
+
+### Relatórios financeiros
+![Relatórios](relatorios.png)
